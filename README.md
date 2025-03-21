@@ -1,46 +1,136 @@
-# Getting Started with Create React App
+# Rich Text Editor with TipTap
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a *React-based Rich Text Editor* built using *TipTap. The editor supports **custom variables, formatting options, and interactive features* like fallback values for variables.
 
-## Available Scripts
+![Editor Preview](https://github.com/Priyankanegi28/Text-Editor/blob/main/public/editor-main.png)
 
-In the project directory, you can run:
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- *Text Formatting*: Bold, Italic, Underline, Strikethrough
+- *Headings*: H1, H2, H3 support
+- *Block Elements*: Blockquotes, Code Blocks
+- *Lists*: Bullet List, Ordered List
+- *Text Alignment*: Left, Center, Right, Justify
+- *Undo & Redo*: History support
+- *Custom Variables*: Insert variables with {{ variable }} syntax
+- *Variable Fallback Values*: Set fallback text for variables
+- *Popover UI*: Suggests variable options when typing {{
+- *Live Formatting Toolbar*: Apply styles dynamically
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠 Tech Stack
 
-### `npm test`
+- *React* 
+- *TipTap* (Rich text editor)
+- *TypeScript* (for type safety)
+- *CSS Modules* (for styling)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📚 Installation
 
-### `npm run build`
+1. *Clone the repository*:
+   sh
+   git clone https://github.com/yourusername/tiptap-editor.git
+   cd tiptap-editor
+   
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. *Install dependencies*:
+   sh
+   npm install
+   
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. *Start the development server*:
+   sh
+   npm run dev
+   
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📄 Project Structure
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+/src
+  ├── /components
+  │   ├── Editor.tsx          # Main editor component
+  │   ├── VariablePopover.tsx # Popover for variable selection
+  ├── /extensions
+  │   ├── Variable.ts         # Custom TipTap extension for variables
+  ├── /styles
+  │   ├── editor.module.css   # Editor styling
+  ├── /utils
+  │   ├── variables.ts
+  ├── App.tsx                 # Root component
+  ├── main.tsx                # Entry point
+  ├── index.html               # Base HTML file
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🛠 Usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 📝 Basic Editing
+- Start typing in the editor to enter content.
+- Use the *toolbar buttons* to format text.
 
-## Learn More
+### 💠 Insert Variables
+- Type {{ to open the *variable popover*.
+- Select a variable to insert it into the editor.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🔄 Undo & Redo
+- Click *↩ Undo* to revert the last change.
+- Click *↪ Redo* to redo an undone change.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📀 Keyboard Shortcuts
+
+| Action        | Shortcut |
+|--------------|---------|
+| *Bold*       | Ctrl + B |
+| *Italic*     | Ctrl + I |
+| *Underline*  | Ctrl + U |
+| *Strikethrough* | Ctrl + Shift + S |
+| *Heading 1*  | Ctrl + Alt + 1 |
+| *Heading 2*  | Ctrl + Alt + 2 |
+| *Heading 3*  | Ctrl + Alt + 3 |
+| *Blockquote* | Ctrl + Shift + Q |
+| *Code Block* | Ctrl + Shift + C |
+| *Bullet List* | Ctrl + Shift + 8 |
+| *Ordered List* | Ctrl + Shift + 7 |
+| *Align Left*  | Ctrl + L |
+| *Align Center* | Ctrl + E |
+| *Align Right* | Ctrl + R |
+| *Justify*     | Ctrl + J |
+| *Undo*       | Ctrl + Z |
+| *Redo*       | Ctrl + Y |
+
+## 🛠 Customization
+
+You can modify the *editor extensions* inside Editor.tsx.  
+For example, to enable *custom colors*, install the [Color Extension](https://tiptap.dev/docs/extensions/color):
+
+sh
+npm install @tiptap/extension-color
+
+
+Then, import and add it to the editor extensions:
+
+tsx
+import Color from "@tiptap/extension-color";
+
+const editor = useEditor({
+  extensions: [
+    StarterKit,
+    Color.configure({ types: ["textStyle"] }), 
+  ],
+});
+
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a new branch (git checkout -b feature-branch)
+3. Commit your changes (git commit -m "Add new feature")
+4. Push to the branch (git push origin feature-branch)
+5. Open a *Pull Request*
+
+## 🐝 License
+
+This project is licensed under the *MIT License*.
+
+---
+
+🔗 *Made with ❤ using TipTap & React*
