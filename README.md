@@ -129,8 +129,6 @@ const editor = useEditor({
 
 ## 🐝 License
 
-This project is licensed under the *MIT License*.
-
 ---
 
 🔗 *Made with ❤ using TipTap & React*
